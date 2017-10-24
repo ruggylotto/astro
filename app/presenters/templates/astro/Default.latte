@@ -1,0 +1,71 @@
+{* Latte template *}
+
+{block content}
+<h2>Astronauti</h2>
+<table id="astro_tab" class="norm_tab">
+    <tr>
+        <th>Jméno</th><th>Příjmení</th><th>Datum narození</th><th>Schopnost</th>
+    </tr>
+    {foreach $astro_tab as $astro_row}
+        <tr data-id="{$astro_row->id}">
+            <td class="fname">{$astro_row->f_name}</td>
+            <td class="lname">{$astro_row->l_name}</td>
+            <td class="DOB">{$astro_row->DOB}</td>
+            <td class="skill">{$astro_row->skill}</td>
+        </tr>
+        {/foreach}
+</table>
+<button id="add">Přidat nového</button>
+<button id="mod" disabled>Upravit</button>
+<button id="del" disabled>Smazat</button>
+
+
+<div id="form_modal" class="modal">
+<table id="astro_form">
+    <form name="astro_form">
+        <tr>
+            <th>Jméno</th>
+            <td><input type="text" name="fname" value="" size="15" /></td>
+            <td id="fname_err" class="form_err"></td>
+        </tr>
+        <tr>
+            <th>Příjmení</th>
+            <td><input type="text" name="lname" value="" size="15" /></td>
+            <td id="lname_err" class="form_err"></td>
+        </tr>
+        <tr>
+            <th>Datum narození</th>
+            <td>
+                <input type="text" name="DOB_day" value="" size="1" />.
+                <input type="text" name="DOB_mon" value="" size="1" />.
+                <input type="text" name="DOB_year" value="" size="2" />
+            </td>
+            <td id="DOB_err" class="form_err"></td>
+        <tr>
+            <th>Schopnost</th>
+            <td> <textarea name="skill" rows="2" cols="15"></textarea> </td>
+            <td id="skill_err" class="form_err"></td>
+        </tr>    
+        </tr>
+    </form>
+            <th></th>
+            <td>
+                <button id="send">Přidat</button>
+                <button id="cancel">Zrušit</button>
+            </td>
+</table>
+<p id="doop_err" class="form_err" style="display: none;">Duplicidní záznam</p>
+</div>
+
+<div class="modal" id="modal_droprow_confirm">
+    <h3>Skutečně si přejete smazat kosmonauta <span id="dropping_astro_name"></span>?</h3>
+    <button id="row_drop_yes">Ano</button>
+    <button id="row_drop_no">Ne</button>
+</div>
+
+
+<a href="/" style="display: none;" id="reload"></a>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="\js\astromen.js"></script>
+{/block}

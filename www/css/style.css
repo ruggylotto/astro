@@ -1,0 +1,76 @@
+body {
+	font-size: 15px;
+	line-height: 1.6;
+	color: #333;
+	background: white;
+}
+
+h1 {
+	color: #3484D2;
+}
+
+#ajax-spinner {
+	margin: 15px 0 0 15px;
+	padding: 13px;
+	background: white url('../images/spinner.gif') no-repeat 50% 50%;
+	font-size: 0;
+	z-index: 123456;
+	display: none;
+}
+
+div.flash {
+	color: black;
+	background: #FFF9D7;
+	border: 1px solid #E2C822;
+	padding: 1em;
+	margin: 1em 0;
+}
+
+a[href^="#error:"] {
+	background: red;
+	color: white;
+}
+
+form th, form td {
+	vertical-align: top;
+	font-weight: normal;
+}
+
+form th {
+	text-align: right;
+}
+
+form .required label {
+	font-weight: bold;
+}
+
+form .error {
+	color: #D00;
+	font-weight: bold;
+}
+
+h2 {color: #0024b7;}
+
+table.norm_tab, table.norm_tab tr, table.norm_tab th, table.norm_tab td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+table.norm_tab th, table.norm_tab td {padding: 2px 7px; text-align: center;}
+table.norm_tab th {background-color: #4ddbff;}
+table.norm_tab td {cursor: pointer;}
+table.norm_tab tr:hover {background-color: #cccccc;}
+table.norm_tab tr.marked {background-color: #00cc44;}
+
+table#astro_form {padding: 10px 10px 5px 10px;}
+.form_err {color: red;}
+div.modal {
+                position: absolute;
+                background-color: #eeeeee;
+                visibility: collapse;
+}
+div#modal_droprow_confirm h3{color: #0024b7;
+margin: 20px 10px;}
+button#row_drop_yes {position: relative;
+                     margin: 0px 0px 20px 60px;}
+button#row_drop_no {position: relative;
+                    margin: 0px 0px 20px 20px;}
